@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Users CRUD - JSONPlaceholder</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Users CRUD - JSONPlaceholder</h1>
+
+    <div class="top-bar">
+      <!-- Tìm kiếm theo tên -->
+      <div>
+        <label for="searchInput">Search name: </label>
+        <input type="text" id="searchInput" placeholder="Type name..." />
+      </div>
+
+      <!-- Phân trang -->
+      <div class="pagination">
+        <button id="prevPageBtn">Prev</button>
+        <span id="pageInfo">Page 1 / 1</span>
+        <button id="nextPageBtn">Next</button>
+      </div>
+    </div>
+
+    <!-- Bảng hiển thị user -->
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="userTableBody">
+        <!-- Render bằng JavaScript -->
+      </tbody>
+    </table>
+
+    <div id="message"></div>
+
+    <!-- Form Create / Edit -->
+    <form id="userForm">
+      <h2 id="formTitle">Create New User</h2>
+      <!-- Dùng input hidden để lưu id khi Edit -->
+      <input type="hidden" id="userId" />
+
+      <div class="form-row">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required />
+      </div>
+
+      <div class="form-row">
+        <label for="email">Email:</label>
+        <input type="email" id="email" required />
+      </div>
+
+      <div class="form-row">
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" required />
+      </div>
+
+      <button type="submit" id="submitBtn">Save</button>
+      <button type="button" id="cancelEditBtn" style="display:none;">Cancel</button>
+    </form>
+  </div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
